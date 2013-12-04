@@ -21,10 +21,12 @@ Con el comando anterior también se creará el fichero Gemfile.lock necesario pa
 
 Posible fallo con gema Postgres al hacer bundle install.
 
+- Necesario descargar fichero jquery.js requerido y colocar en /public/js/
+
 ###Para usar:
 
 - Usar un navegador web y copiar en la barra de dirección:
-		próximamente
+		http://tictactoeullajax.herokuapp.com/
 - Si se desea usar en local usar(previamente descargado):
 		localhost:4567
 		
