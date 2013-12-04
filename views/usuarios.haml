@@ -1,0 +1,38 @@
+.barra-superior
+  -if (!usuario)
+    %form{:action=>"/",:method=>"post"}
+      %a.brand{:href => "/"}
+        %u Volver
+      Juegas como invitado elije un nombre para llevar tu ranking personal
+      %input{:type=>"text",:name=>"usuario[username]",:placeholder=>"usuario"}
+      %input{:type=>"password",:name=>"usuario[password]",:placeholder=>"password"}
+      %input{:type=>"hidden",:name=>"usuario[win]",:value=>"0"}
+      %input{:type=>"hidden",:name=>"usuario[loose]",:value=>"0"}
+      %input{:type=>"hidden",:name=>"usuario[play]",:value=>"0"}
+      %input{:type=>"submit",:value=>"enviar"}
+  -else
+    %form{:action=>"/",:method=>"post"}
+      %a.brand{:href => "/"}
+        %u Volver
+      Hola, #{usuario}
+      %input{:type=>"hidden",:value=>"1",:name=>"logout"}
+      %input{:type=>"submit",:value=>"logout"}
+
+%table
+  %tr
+    %th RANKING TICTACTOE
+  %tr
+    %th username
+    %th won
+    %th lost
+    %th played
+  -@usuarios.each do |usuario|
+    %tr
+      %td
+        #{usuario.username}
+      %td
+        #{usuario.win}
+      %td
+        #{usuario.loose}
+      %td
+        #{usuario.play}
